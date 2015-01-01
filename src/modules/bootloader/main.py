@@ -53,11 +53,10 @@ def create_conf(uuid, conf_path):
     kernel = libcalamares.job.configuration["kernel"]
     img = libcalamares.job.configuration["img"]
     partitions = libcalamares.globalstorage.value("partitions")
+    swap = ""
     for partition in partitions:
         if partition["fs"] == "linuxswap":
             swap = partition["uuid"]
-        else:
-            swap = ""
     lines = [
         '## This is just an exmaple config file.\n',
         '## Please edit the paths and kernel parameters according to your system.\n',
@@ -65,7 +64,7 @@ def create_conf(uuid, conf_path):
         'title   %s GNU/Linux, with Linux core repo kernel\n' % distribution,
         'linux   %s\n' % kernel,
         'initrd  %s\n' % img,
-        'options root=UUID=%s quiet resume=%s rw\n' % (uuid, swap),
+        'options root=UUID=%s quiet resume=UUID=%s rw\n' % (uuid, swap),
     ]
 
     with open(conf_path, 'w') as f:
@@ -91,7 +90,7 @@ def create_fallback(uuid, fallback_path):
         'title   %s GNU/Linux, with Linux fallback kernel\n' % distribution,
         'linux   %s\n' % kernel,
         'initrd  %s\n' % fb_img,
-        'options root=UUID=%s quiet resume=%s rw\n' % (uuid, swap),
+        'options root=UUID=%s quiet resume=UUID=%s rw\n' % (uuid, swap),
     ]
 
     with open(fallback_path, 'w') as f:
@@ -135,7 +134,7 @@ def install_bootloader(boot_loader, fw_type):
                 boot_p = boot_device[-1:]
                 device = boot_device[:-1]
                 print(device)
-        subprocess.call(['sgdisk', '--typecode=%s:EF00 %s' % (boot_p, device)])
+        subprocess.call(["sgdisk", "--typecode=%s:EF00" % boot_p, "%s" % device])
         subprocess.call(
             ["gummiboot", "--path=%s/boot" % install_path, "install"])
         create_conf(uuid, conf_path)
