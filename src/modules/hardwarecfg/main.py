@@ -120,8 +120,4 @@ def run():
     if num_res == "0":
         libcalamares.utils.chroot_call(['sh', '-c', 'pacman -Rsc --noconfirm $(pacman -Qq | grep virtualbox-guest-modules)'])
 
-    # Set unique machine-id
-    libcalamares.utils.chroot_call(['dbus-uuidgen', '--ensure=/etc/machine-id'])
-    libcalamares.utils.chroot_call(['dbus-uuidgen', '--ensure=/var/lib/dbus/machine-id'])
-
     return None
