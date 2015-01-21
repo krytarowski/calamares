@@ -41,18 +41,6 @@ def run():
     if os.path.exists("%s/usr/lib/libudev.so.0" % install_path) or os.path.exists("%s/usr/lib32/libudev.so.0" % install_path):
         os.system("echo -e \"STEAM_RUNTIME=0\nSTEAM_FRAME_FORCE_CLOSE=1\" >> %s/etc/environment" % install_path)
 
-    # Fix_gnome_apps
-    libcalamares.utils.chroot_call(['glib-compile-schemas', '/usr/share/glib-2.0/schemas'])
-    libcalamares.utils.chroot_call(['gtk-update-icon-cache', '-q', '-t', '-f', '/usr/share/icons/hicolor'])
-    libcalamares.utils.chroot_call(['dconf', 'update'])
-
-    if os.path.exists("%s/usr/bin/gnome-keyring-daemon" % install_path):
-        libcalamares.utils.chroot_call(['setcap', 'cap_ipc_lock=ep', '/usr/bin/gnome-keyring-daemon'])
-
-    # Fix_ping_installation
-    libcalamares.utils.chroot_call(['setcap', 'cap_net_raw=ep', '/usr/bin/ping'])
-    libcalamares.utils.chroot_call(['setcap', 'cap_net_raw=ep', '/usr/bin/ping6'])
-
     # Remove calamares
     if os.path.exists("%s/usr/bin/calamares" % install_path):
         libcalamares.utils.chroot_call(['pacman', '-R', '--noconfirm', 'calamares'])
