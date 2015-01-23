@@ -1,6 +1,7 @@
 /* === This file is part of Calamares - <http://github.com/calamares> ===
  *
  *   Copyright 2014, Aurélien Gâteau <agateau@kde.org>
+ *   Copyright 2015, Teo Mrnjavac <teo@kde.org>
  *
  *   Calamares is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -23,6 +24,7 @@
 
 class QLabel;
 class QProgressBar;
+class QQuickWidget;
 
 namespace Calamares
 {
@@ -51,6 +53,7 @@ private:
     QWidget* m_widget;
     QProgressBar* m_progressBar;
     QLabel* m_label;
+    QQuickWidget* m_slideShow;
 
     void updateFromJobQueue( qreal percent, const QString& message );
 };

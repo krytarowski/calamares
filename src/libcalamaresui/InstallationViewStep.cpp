@@ -1,6 +1,7 @@
 /* === This file is part of Calamares - <http://github.com/calamares> ===
  *
  *   Copyright 2014, Aurélien Gâteau <agateau@kde.org>
+ *   Copyright 2015, Teo Mrnjavac <teo@kde.org>
  *
  *   Calamares is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -18,11 +19,18 @@
 
 #include <InstallationViewStep.h>
 
-#include <JobQueue.h>
+#include "JobQueue.h"
+#include "Branding.h"
+#include "utils/CalamaresUtilsGui.h"
+#include "utils/Logger.h"
+#include "Settings.h"
 
+#include <QDir>
 #include <QLabel>
 #include <QProgressBar>
 #include <QVBoxLayout>
+#include <QtQuickWidgets/QQuickWidget>
+#include <QQmlEngine>
 
 namespace Calamares
 {
@@ -35,10 +43,30 @@ InstallationViewStep::InstallationViewStep( QObject* parent )
     m_progressBar->setMaximum( 10000 );
     m_label = new QLabel;
     QVBoxLayout* layout = new QVBoxLayout( m_widget );
-    layout->addWidget(m_progressBar);
-    layout->addWidget(m_label);
+    QVBoxLayout* innerLayout = new QVBoxLayout;
 
-    connect( JobQueue::instance(), &JobQueue::progress, this, &InstallationViewStep::updateFromJobQueue );
+    m_slideShow = new QQuickWidget;
+    layout->addWidget( m_slideShow );
+    CalamaresUtils::unmarginLayout( layout );
+
+    layout->addLayout( innerLayout );
+    m_slideShow->setSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding );
+    m_slideShow->setResizeMode( QQuickWidget::SizeRootObjectToView );
+
+    m_slideShow->engine()->addImportPath( CalamaresUtils::qmlModulesDir().absolutePath() );
+
+    if ( !Calamares::Branding::instance()->slideshowPath().isEmpty() )
+        m_slideShow->setSource( QUrl::fromLocalFile( Calamares::Branding::instance()
+                                                     ->slideshowPath() ) );
+
+    innerLayout->addSpacing( CalamaresUtils::defaultFontHeight() / 2 );
+    innerLayout->addWidget( m_progressBar );
+    innerLayout->addWidget( m_label );
+
+    connect( JobQueue::instance(), &JobQueue::progress,
+             this, &InstallationViewStep::updateFromJobQueue );
+
+    cDebug() << "QML import paths:" << m_slideShow->engine()->importPathList();
 }
 
 QString

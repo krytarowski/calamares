@@ -40,6 +40,7 @@ calamares_add_library( ${CALAMARESUI_LIBRARY_TARGET}
     LINK_LIBRARIES
         yaml-cpp
         Qt5::Svg
+	Qt5::QuickWidgets
     RESOURCES libcalamaresui.qrc
     EXPORT CalamaresLibraryDepends
     VERSION ${CALAMARES_VERSION_SHORT}
