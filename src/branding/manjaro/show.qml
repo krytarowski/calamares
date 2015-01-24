@@ -24,7 +24,7 @@ Presentation
     id: presentation
 
     Timer {
-        interval: 5000
+        interval: 20000
         running: true
         repeat: true
         onTriggered: presentation.goToNextSlide()
@@ -64,8 +64,8 @@ Presentation
             anchors.horizontalCenter: background2.horizontalCenter
             anchors.top: background2.bottom
             text: "All of Manjaros versions are completely customizable<br/>"+
-                  "to exactly how you want it.<br/>"+
-                  "From theming, to the very kernel itself, it can be changed."
+                  "to exactly how you want it. From theming, to the very<br/>"+
+                  "kernel itself, it can be changed."
             wrapMode: Text.WordWrap
             width: 580
             horizontalAlignment: Text.Center
@@ -105,8 +105,8 @@ Presentation
         Text {
             anchors.horizontalCenter: background4.horizontalCenter
             anchors.top: background4.bottom
-            text: "Manjaro has three different options for managing packages.<br/>"+
-                  "The original command line option, Pacman.<br/>"+
+            text: "Manjaro has three different options for managing<br/>"+
+                  "packages.The original command line option, Pacman.<br/>"+
                   "And two different GUI options, Octopi or Pamac."
             wrapMode: Text.WordWrap
             width: 580
