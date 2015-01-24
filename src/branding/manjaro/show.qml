@@ -24,8 +24,8 @@ Presentation
     id: presentation
 
     Timer {
-        interval: 1000
-        running: false
+        interval: 1500
+        running: true
         repeat: true
         onTriggered: presentation.goToNextSlide()
     }
@@ -35,7 +35,7 @@ Presentation
         Image {
             id: background1
             source: "slide.png"
-            width: 400; height: 400
+            width: 420; height: 236
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
@@ -56,15 +56,15 @@ Presentation
         Image {
             id: background2
             source: "slide.png"
-            width: 400; height: 400
+            width: 420; height: 236
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
         Text {
             anchors.horizontalCenter: background2.horizontalCenter
             anchors.top: background2.bottom
-            text: "All of Manjaros versions are completely customizable to exactly how you want it.<br/>"+
-                  "<br/>"+
+            text: "All of Manjaros versions are completely customizable<br/>"+
+                  "to exactly how you want it.<br/>"+
                   "From theming, to the very kernel itself, it can be changed."
             wrapMode: Text.WordWrap
             width: background2.width
@@ -77,7 +77,7 @@ Presentation
         Image {
             id: background3
             source: "slide.png"
-            width: 400; height: 400
+            width: 420; height: 236
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
@@ -98,7 +98,7 @@ Presentation
         Image {
             id: background4
             source: "slide.png"
-            width: 400; height: 400
+            width: 420; height: 236
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
@@ -119,7 +119,7 @@ Presentation
         Image {
             id: background5
             source: "slide.png"
-            width: 400; height: 400
+            width: 420; height: 236
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
