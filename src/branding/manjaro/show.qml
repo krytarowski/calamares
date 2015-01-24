@@ -24,7 +24,7 @@ Presentation
     id: presentation
 
     Timer {
-        interval: 5000
+        interval: 1000
         running: false
         repeat: true
         onTriggered: presentation.goToNextSlide()
@@ -33,20 +33,20 @@ Presentation
     Slide {
 
         Image {
-            id: background
+            id: background1
             source: "slide.png"
-            width: 200; height: 200
+            width: 400; height: 400
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
         Text {
-            anchors.horizontalCenter: background.horizontalCenter
-            anchors.top: background.bottom
+            anchors.horizontalCenter: background1.horizontalCenter
+            anchors.top: background1.bottom
             text: "Welcome to Manjaro.<br/>"+
                   "Manjaro is driven by a hardworking and dedicated community.<br/>"+
                   "During the installation, this slideshow will provide a quick introduction."
             wrapMode: Text.WordWrap
-            width: root.width
+            width: background1.width
             horizontalAlignment: Text.Center
         }
     }
@@ -54,20 +54,20 @@ Presentation
     Slide {
 
         Image {
-            id: background
+            id: background2
             source: "slide.png"
-            width: 200; height: 200
+            width: 400; height: 400
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
         Text {
-            anchors.horizontalCenter: background.horizontalCenter
-            anchors.top: background.bottom
+            anchors.horizontalCenter: background2.horizontalCenter
+            anchors.top: background2.bottom
             text: "All of Manjaros versions are completely customizable to exactly how you want it.<br/>"+
                   "<br/>"+
                   "From theming, to the very kernel itself, it can be changed."
             wrapMode: Text.WordWrap
-            width: root.width
+            width: background2.width
             horizontalAlignment: Text.Center
         }
     }
@@ -75,20 +75,20 @@ Presentation
     Slide {
 
         Image {
-            id: background
+            id: background3
             source: "slide.png"
-            width: 200; height: 200
+            width: 400; height: 400
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
         Text {
-            anchors.horizontalCenter: background.horizontalCenter
-            anchors.top: background.bottom
+            anchors.horizontalCenter: background3.horizontalCenter
+            anchors.top: background3.bottom
             text: "Manjaro has three different officially supported editions.<br/>"+
                   "Additionally, there's a multitude of community editions to <br/>"+
                   "choose from, built by the community, for the community."
             wrapMode: Text.WordWrap
-            width: root.width
+            width: background3.width
             horizontalAlignment: Text.Center
         }
     }
@@ -96,20 +96,20 @@ Presentation
     Slide {
 
         Image {
-            id: background
+            id: background4
             source: "slide.png"
-            width: 200; height: 200
+            width: 400; height: 400
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
         Text {
-            anchors.horizontalCenter: background.horizontalCenter
-            anchors.top: background.bottom
+            anchors.horizontalCenter: background4.horizontalCenter
+            anchors.top: background4.bottom
             text: "Manjaro has three different options for managing packages.<br/>"+
                   "The original command line option, Pacman.<br/>"+
                   "And two different GUI options, Octopi or Pamac."
             wrapMode: Text.WordWrap
-            width: root.width
+            width: background4.width
             horizontalAlignment: Text.Center
         }
     }
@@ -117,20 +117,20 @@ Presentation
     Slide {
 
         Image {
-            id: background
+            id: background5
             source: "slide.png"
-            width: 200; height: 200
+            width: 400; height: 400
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
         Text {
-            anchors.horizontalCenter: background.horizontalCenter
-            anchors.top: background.bottom
+            anchors.horizontalCenter: background5.horizontalCenter
+            anchors.top: background5.bottom
             text: "We appreciate you choosing Manjaro, and hope you enjoy<br/>"+
                   "it as much as we do making it! If you have any questions or feedback,<br/>"+
                   "please feel free to visit the forum, IRC, or wiki."
             wrapMode: Text.WordWrap
-            width: root.width
+            width: background5.width
             horizontalAlignment: Text.Center
         }
     }
