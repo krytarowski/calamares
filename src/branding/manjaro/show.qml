@@ -35,7 +35,7 @@ Presentation
         Image {
             id: background1
             source: "slide.png"
-            width: 420; height: 236
+            width: 600; height: 332
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
@@ -46,7 +46,7 @@ Presentation
                   "Manjaro is driven by a hardworking and dedicated community.<br/>"+
                   "During the installation, this slideshow will provide a quick introduction."
             wrapMode: Text.WordWrap
-            width: 580
+            width: 600
             horizontalAlignment: Text.Center
         }
     }
@@ -55,8 +55,8 @@ Presentation
 
         Image {
             id: background2
-            source: "slide.png"
-            width: 420; height: 236
+            source: "slide2.png"
+            width: 600; height: 332
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
@@ -67,7 +67,7 @@ Presentation
                   "to exactly how you want it. From theming, to the very<br/>"+
                   "kernel itself, it can be changed."
             wrapMode: Text.WordWrap
-            width: 580
+            width: 600
             horizontalAlignment: Text.Center
         }
     }
@@ -76,8 +76,8 @@ Presentation
 
         Image {
             id: background3
-            source: "slide.png"
-            width: 420; height: 236
+            source: "slide3.png"
+            width: 600; height: 332
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
@@ -88,7 +88,7 @@ Presentation
                   "Additionally, there's a multitude of community editions to <br/>"+
                   "choose from, built by the community, for the community."
             wrapMode: Text.WordWrap
-            width: 580
+            width: 600
             horizontalAlignment: Text.Center
         }
     }
@@ -97,8 +97,8 @@ Presentation
 
         Image {
             id: background4
-            source: "slide.png"
-            width: 420; height: 236
+            source: "slide4.png"
+            width: 600; height: 332
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
@@ -106,10 +106,10 @@ Presentation
             anchors.horizontalCenter: background4.horizontalCenter
             anchors.top: background4.bottom
             text: "Manjaro has three different options for managing<br/>"+
-                  "packages.The original command line option, Pacman.<br/>"+
-                  "And two different GUI options, Octopi or Pamac."
+                  "packages. The original command line option, Pacman<br/>"+
+                  "and two different GUI options, Octopi or Pamac."
             wrapMode: Text.WordWrap
-            width: 580
+            width: 600
             horizontalAlignment: Text.Center
         }
     }
@@ -118,8 +118,8 @@ Presentation
 
         Image {
             id: background5
-            source: "slide.png"
-            width: 420; height: 236
+            source: "slide5.png"
+            width: 600; height: 332
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
@@ -128,9 +128,9 @@ Presentation
             anchors.top: background5.bottom
             text: "We appreciate you choosing Manjaro, and hope you enjoy<br/>"+
                   "it as much as we do making it! If you have any questions<br/>"+
-                  "or feedback,please feel free to visit the forum, IRC, or wiki."
+                  "or feedback, please feel free to visit the forum, IRC, or wiki."
             wrapMode: Text.WordWrap
-            width: 580
+            width: 600
             horizontalAlignment: Text.Center
         }
     }
