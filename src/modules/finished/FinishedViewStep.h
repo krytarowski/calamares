@@ -1,6 +1,5 @@
 /* === This file is part of Calamares - <http://github.com/calamares> ===
  *
- *   Copyright 2014, Aurélien Gâteau <agateau@kde.org>
  *   Copyright 2014-2015, Teo Mrnjavac <teo@kde.org>
  *
  *   Calamares is free software: you can redistribute it and/or modify
@@ -17,38 +16,28 @@
  *   along with Calamares. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PARTITIONVIEWSTEP_H
-#define PARTITIONVIEWSTEP_H
+#ifndef FINISHEDPAGEPLUGIN_H
+#define FINISHEDPAGEPLUGIN_H
 
 #include <QObject>
 
 #include "viewpages/ViewStep.h"
 #include "PluginDllMacro.h"
 
-class ChoicePage;
-class EraseDiskPage;
-class AlongsidePage;
-class PartitionPage;
-class ReplacePage;
-class PartitionCoreModule;
-class QStackedWidget;
+class FinishedPage;
 
-/**
- * The starting point of the module. Instantiates PartitionCoreModule and
- * PartitionPage, then connect them.
- */
-class PLUGINDLLEXPORT PartitionViewStep : public Calamares::ViewStep
+class PLUGINDLLEXPORT FinishedViewStep : public Calamares::ViewStep
 {
     Q_OBJECT
     Q_PLUGIN_METADATA( IID "calamares.ViewModule/1.0" )
+
     Q_INTERFACES( Calamares::ViewStep )
 
 public:
-    explicit PartitionViewStep( QObject* parent = 0 );
-    virtual ~PartitionViewStep();
+    explicit FinishedViewStep( QObject* parent = nullptr );
+    virtual ~FinishedViewStep();
 
     QString prettyName() const override;
-    QWidget* createSummaryWidget() const override;
 
     QWidget* widget() override;
 
@@ -61,20 +50,14 @@ public:
     bool isAtBeginning() const override;
     bool isAtEnd() const override;
 
-    void onLeave() override;
+    void onActivate() override;
 
     QList< Calamares::job_ptr > jobs() const override;
 
-private:
-    bool canBeResized( const QString& partitionPath );
+    void setConfigurationMap( const QVariantMap& configurationMap ) override;
 
-    PartitionCoreModule* m_core;
-    QStackedWidget*   m_widget;
-    ChoicePage*       m_choicePage;
-    EraseDiskPage*    m_erasePage;
-    AlongsidePage*    m_alongsidePage;
-    PartitionPage*    m_manualPartitionPage;
-    ReplacePage*      m_replacePage;
+private:
+    FinishedPage* m_widget;
 };
 
-#endif // PARTITIONVIEWSTEP_H
+#endif // FINISHEDPAGEPLUGIN_H

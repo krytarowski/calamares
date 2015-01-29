@@ -1,6 +1,6 @@
 /* === This file is part of Calamares - <http://github.com/calamares> ===
  *
- *   Copyright 2014, Teo Mrnjavac <teo@kde.org>
+ *   Copyright 2014-2015, Teo Mrnjavac <teo@kde.org>
  *
  *   Calamares is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -48,6 +48,8 @@ public:
     QStringList availableModules();
     Module* module( const QString& name );
 
+    Phase currentPhase();
+
     void loadModules( Phase phase );
 
 signals:
@@ -65,6 +67,7 @@ private:
 
     QStringList m_paths;
 
+    Phase m_lastPhaseLoaded;
 };
 
 }

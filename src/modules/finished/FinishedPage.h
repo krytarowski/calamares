@@ -16,44 +16,37 @@
  *   along with Calamares. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GREETINGPAGEPLUGIN_H
-#define GREETINGPAGEPLUGIN_H
+#ifndef FINISHEDPAGE_H
+#define FINISHEDPAGE_H
 
-#include <QObject>
+#include <QWidget>
 
-#include "viewpages/ViewStep.h"
-#include "PluginDllMacro.h"
+namespace Ui
+{
+class FinishedPage;
+}
 
-class GreetingPage;
-
-class PLUGINDLLEXPORT GreetingViewStep : public Calamares::ViewStep
+class FinishedPage : public QWidget
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA( IID "calamares.ViewModule/1.0" )
-
-    Q_INTERFACES( Calamares::ViewStep )
-
 public:
-    explicit GreetingViewStep( QObject* parent = nullptr );
-    virtual ~GreetingViewStep();
+    explicit FinishedPage( QWidget* parent = nullptr );
 
-    QString prettyName() const override;
+    void setRestartNowEnabled( bool enabled );
+    void setRestartNowChecked( bool checked );
+    void setRestartNowCommand( const QString& command );
 
-    QWidget* widget() override;
+    void setUpRestart();
 
-    void next() override;
-    void back() override;
-
-    bool isNextEnabled() const override;
-    bool isBackEnabled() const override;
-
-    bool isAtBeginning() const override;
-    bool isAtEnd() const override;
-
-    QList< Calamares::job_ptr > jobs() const override;
+protected:
+    void focusInEvent( QFocusEvent* e ) override; //choose the child widget to focus
 
 private:
-    GreetingPage* m_widget;
+    Ui::FinishedPage* ui;
+
+    QString m_restartNowCommand;
+
+    bool m_restartSetUp;
 };
 
-#endif // GREETINGPAGEPLUGIN_H
+#endif // FINISHEDPAGE_H
