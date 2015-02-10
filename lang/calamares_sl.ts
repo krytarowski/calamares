@@ -920,17 +920,17 @@ The installer will quit and all changes will be lost.</source>
 <context>
     <name>CreatePartitionTableJob</name>
     <message>
-        <location filename="../src/modules/partition/jobs/CreatePartitionTableJob.cpp" line="47"/>
+        <location filename="../src/modules/partition/jobs/CreatePartitionTableJob.cpp" line="48"/>
         <source>Create partition table</source>
         <translation>Ustvari razpredelnico razdelkov</translation>
     </message>
     <message>
-        <location filename="../src/modules/partition/jobs/CreatePartitionTableJob.cpp" line="54"/>
+        <location filename="../src/modules/partition/jobs/CreatePartitionTableJob.cpp" line="55"/>
         <source>The installer failed to create a partition table on %1.</source>
         <translation>Namestilniku ni uspelo ustvariti razpredelnice razdelkov na %1.</translation>
     </message>
     <message>
-        <location filename="../src/modules/partition/jobs/CreatePartitionTableJob.cpp" line="62"/>
+        <location filename="../src/modules/partition/jobs/CreatePartitionTableJob.cpp" line="63"/>
         <source>Could not open device %1.</source>
         <translation>Naprave %1 ni mogoče odpreti.</translation>
     </message>
@@ -1486,17 +1486,17 @@ Nekateri datotečni sistemi za podprtost zahtevajo namestitev zunanjih orodij. V
 <context>
     <name>GreetingPage</name>
     <message>
-        <location filename="../src/modules/greeting/GreetingPage.cpp" line="117"/>
+        <location filename="../src/modules/greeting/GreetingPage.cpp" line="124"/>
         <source>&lt;h1&gt;Welcome to the %1 installer.&lt;/h1&gt;&lt;br/&gt;This program will ask you some questions and set up %2 on your computer.</source>
         <translation>&lt;h1&gt;Dobrodošli v namestilniku %1.&lt;/h1&gt;&lt;br/&gt;Ta program vam bo zastavil nekaj vprašanj in nastavil %2 na vašem računalniku.</translation>
     </message>
     <message>
-        <location filename="../src/modules/greeting/GreetingPage.cpp" line="134"/>
+        <location filename="../src/modules/greeting/GreetingPage.cpp" line="141"/>
         <source>About %1 installer</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/modules/greeting/GreetingPage.cpp" line="136"/>
+        <location filename="../src/modules/greeting/GreetingPage.cpp" line="143"/>
         <source>&lt;h1&gt;%1&lt;/h1&gt;&lt;br/&gt;&lt;b&gt;%2&lt;br/&gt;for %3&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Copyright 2014 Teo Mrnjavac &amp;lt;teo@kde.org&amp;gt;&lt;br/&gt;Thanks to: Anke Boersma, Aurélien Gâteau, Kevin Kofler, Philip Müller, Pier Luigi Fiorini and Rohan Garg.&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://calamares.github.io/&quot;&gt;Calamares&lt;/a&gt; development is sponsored by &lt;br/&gt;&lt;a href=&quot;http://www.blue-systems.com/&quot;&gt;Blue Systems&lt;/a&gt; - technologies for a better world.</source>
         <translation type="unfinished"/>
     </message>
